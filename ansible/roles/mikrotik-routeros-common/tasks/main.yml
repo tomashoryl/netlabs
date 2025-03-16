@@ -1,0 +1,7 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Configure hostname (system identity)
+  community.routeros.api_modify:
+    path: system identity
+    data: "{{ system_identity }}"
+  when: system_identity is defined
