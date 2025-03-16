@@ -1,0 +1,13 @@
+---
+- name: Configure clab wireguard-simple-2n
+  hosts: clab_wg_s2n
+  gather_facts: false
+  module_defaults:
+    group/community.routeros.api:
+      hostname: "{{ inventory_hostname }}"
+      password: admin
+      username: admin
+
+  roles:
+    - mikrotik-routeros-common
+    - mikrotik-routeros-ip-address

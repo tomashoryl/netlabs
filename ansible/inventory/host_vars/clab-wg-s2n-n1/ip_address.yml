@@ -1,0 +1,4 @@
+---
+ip_address:
+  - interface: ether2
+    address: 10.1.1.1/24
