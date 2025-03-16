@@ -1,0 +1,9 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Configure IP address
+  community.routeros.api_modify:
+    path: ip address
+    data: "{{ ip_address }}"
+  when:
+    - ip_address is defined
+    - ip_address | length > 0
