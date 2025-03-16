@@ -1,0 +1,16 @@
+name: wg-s2n
+
+mgmt:
+  ipv4-subnet: 172.22.22.0/24
+
+topology:
+  nodes:
+    n1:
+      kind: mikrotik_ros
+      image: vrnetlab/mikrotik_routeros:7.16.2
+    n2:
+      kind: mikrotik_ros
+      image: vrnetlab/mikrotik_routeros:7.16.2
+
+  links:
+    - endpoints: ["n1:ether2", "n2:ether2"]
