@@ -1,0 +1,22 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: Configure IS-IS
+  tags:
+    - isis
+    - isis_instance
+  community.routeros.command:
+    commands: "/routing isis instance add {{ routeros_routing_isis_instance }}"
+  when:
+    - force_isis | bool
+    - routeros_routing_isis_instance is defined
+
+- name: Configure /routing isis interface-template
+  tags:
+    - isis
+    - isis_interface
+  community.routeros.command:
+    commands: "/routing isis interface-template add instance={{ item.instance }} interfaces={{ item.interface }} levels={{ item.level }}"
+  loop: "{{ routeros_routing_isis_interface_template }}"
+  when:
+    - force_isis | bool
+    - routeros_routing_isis_interface_template is defined
