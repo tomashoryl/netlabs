@@ -1,0 +1,6 @@
+---
+ip_address:
+  - interface: ether3
+    address: 10.1.2.2/30
+  - interface: lo
+    address: 10.255.255.3/32

@@ -1,0 +1,9 @@
+---
+routeros_routing_isis_instance: afi=ip areas=49.0001 system-id=0102.5525.5003 name=isis-area1
+routeros_routing_isis_interface_template:
+  - interface: lo
+    instance: isis-area1
+    level: l2
+  - interface: ether3
+    instance: isis-area1
+    level: l2
