@@ -1,0 +1,26 @@
+---
+name: isis-s4n
+
+mgmt:
+  network: isis-s4n
+  ipv4-subnet: 172.25.26.0/24
+
+topology:
+  defaults:
+    kind: mikrotik_ros
+    image: vrnetlab/mikrotik_routeros:7.16.2
+  nodes:
+    a:
+      mgmt-ipv4: 172.25.26.2
+    b:
+      mgmt-ipv4: 172.25.26.3
+    c:
+      mgmt-ipv4: 172.25.26.4
+    d:
+      mgmt-ipv4: 172.25.26.5
+
+  links:
+    - endpoints: ["a:ether2", "b:ether2"]
+    - endpoints: ["b:ether3", "c:ether3"]
+    - endpoints: ["b:ether4", "d:ether4"]
+    - endpoints: ["a:ether5", "d:ether5"]
