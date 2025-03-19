@@ -1,0 +1,14 @@
+all:
+  children:
+    mikrotik_routeros:
+      children:
+        clab_wg_s2n:
+          hosts:
+            clab-wg-s2n-n1:
+            clab-wg-s2n-n2:
+        clab_isis_s4n:
+          hosts:
+            clab-isis-s4n-a:
+            clab-isis-s4n-b:
+            clab-isis-s4n-c:
+            clab-isis-s4n-d:
