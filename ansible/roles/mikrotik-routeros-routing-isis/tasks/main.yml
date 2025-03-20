@@ -15,7 +15,7 @@
     - isis
     - isis_interface
   community.routeros.command:
-    commands: "/routing isis interface-template add instance={{ item.instance }} interfaces={{ item.interface }} levels={{ item.level }}"
+    commands: "/routing isis interface-template add instance={{ item.instance }} interfaces={{ item.interface }} levels={{ item.level }} {{ 'ptp' if item.ptp is defined and item.ptp else '' }}"
   loop: "{{ routeros_routing_isis_interface_template }}"
   when:
     - force_isis | bool

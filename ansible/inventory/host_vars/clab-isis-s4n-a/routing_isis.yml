@@ -4,9 +4,12 @@ routeros_routing_isis_interface_template:
   - interface: lo
     instance: isis-area1
     level: l2
+    ptp: true
   - interface: ether2
     instance: isis-area1
     level: l2
+    ptp: true
   - interface: ether5
     instance: isis-area1
     level: l2
+    ptp: true
